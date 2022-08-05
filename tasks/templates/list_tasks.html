@@ -12,10 +12,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous"/>
   </head>
   <body class="bg-dark">
+    <h1 style="color:white; text-align:center; font-family: serif; padding:20px; ">Tareas</h1>
     <div class="col-md-4 offset-md-4">
       {{error}}
 
@@ -23,11 +23,11 @@
       <form action="{% url 'create_task' %}" method="POST" class="card card-body mb-2">
         {% csrf_token %}
 
-        <label for="title">Titulo:</label>
+        <label for="title">Nombre:</label>
         <input type="text" name="title" placeholder="Escribe un titulo..." class="form-control mb-2" autofocus />
         <label for="description">Descripcion:</label>
         <textarea name="description" id="description" rows="1" class="form-control mb-2" placeholder="Es ..."></textarea>
-        <button class="btn btn-primary">Guardar</button>
+        <button class="btn btn-secondary">Guardar</button>
 
       </form>
 
@@ -42,7 +42,7 @@
 
           <form action="{% url 'delete_task' task.id %}" method="POST">
             {% csrf_token %}
-            <button class="btn btn-danger">Eliminar</button>
+            <button class="btn btn-danger">X</button>
           </form>
           
         </div>
